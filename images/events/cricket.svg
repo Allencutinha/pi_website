@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260">
+  <defs>
+    <linearGradient id="cricketSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E3F2FD"/>
+      <stop offset="100%" style="stop-color:#BBDEFB"/>
+    </linearGradient>
+    <linearGradient id="pitch" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8BC34A"/>
+      <stop offset="100%" style="stop-color:#558B2F"/>
+    </linearGradient>
+  </defs>
+  <!-- Sky -->
+  <rect width="400" height="260" fill="url(#cricketSky)"/>
+  <!-- Cricket field (green oval) -->
+  <ellipse cx="200" cy="200" rx="195" ry="75" fill="url(#pitch)"/>
+  <!-- Pitch (lighter strip) -->
+  <rect x="170" y="150" width="60" height="95" rx="4" fill="#C5E1A5" opacity="0.7"/>
+  <!-- Cricket stumps (batting end) -->
+  <line x1="190" y1="175" x2="190" y2="155" stroke="#8D6E63" stroke-width="3"/>
+  <line x1="200" y1="175" x2="200" y2="155" stroke="#8D6E63" stroke-width="3"/>
+  <line x1="210" y1="175" x2="210" y2="155" stroke="#8D6E63" stroke-width="3"/>
+  <!-- Bails -->
+  <line x1="187" y1="155" x2="205" y2="154" stroke="#8D6E63" stroke-width="2.5"/>
+  <line x1="197" y1="154" x2="213" y2="155" stroke="#8D6E63" stroke-width="2.5"/>
+  <!-- Cricket stumps (bowling end) -->
+  <line x1="190" y1="240" x2="190" y2="220" stroke="#8D6E63" stroke-width="3"/>
+  <line x1="200" y1="240" x2="200" y2="220" stroke="#8D6E63" stroke-width="3"/>
+  <line x1="210" y1="240" x2="210" y2="220" stroke="#8D6E63" stroke-width="3"/>
+  <line x1="187" y1="220" x2="205" y2="219" stroke="#8D6E63" stroke-width="2.5"/>
+  <line x1="197" y1="219" x2="213" y2="220" stroke="#8D6E63" stroke-width="2.5"/>
+
+  <!-- Cricket ball in air -->
+  <circle cx="310" cy="90" r="13" fill="#CC3300"/>
+  <path d="M303,84 Q310,79 317,84" fill="none" stroke="#8B1A1A" stroke-width="1.5"/>
+  <path d="M303,96 Q310,101 317,96" fill="none" stroke="#8B1A1A" stroke-width="1.5"/>
+  <line x1="310" y1="77" x2="310" y2="103" stroke="#8B1A1A" stroke-width="1"/>
+
+  <!-- Batswoman (lady player with ponytail) -->
+  <circle cx="155" cy="165" r="14" fill="#D2956E"/>
+  <!-- Ponytail -->
+  <path d="M160,155 Q175,145 170,165" fill="none" stroke="#3E2723" stroke-width="4" stroke-linecap="round"/>
+  <line x1="160" y1="155" x2="173" y2="155" stroke="#3E2723" stroke-width="4"/>
+  <!-- Body (kurta/sports wear) -->
+  <rect x="141" y="179" width="28" height="45" rx="5" fill="#7B1FA2"/>
+  <!-- Batting arm -->
+  <line x1="141" y1="187" x2="118" y2="175" stroke="#D2956E" stroke-width="7" stroke-linecap="round"/>
+  <!-- Other arm -->
+  <line x1="169" y1="187" x2="188" y2="195" stroke="#D2956E" stroke-width="7" stroke-linecap="round"/>
+  <!-- Cricket bat -->
+  <rect x="185" y="180" width="10" height="55" rx="3" fill="#C8A96E"/>
+  <rect x="183" y="178" width="14" height="8" rx="2" fill="#A0522D"/>
+  <!-- Legs -->
+  <line x1="149" y1="224" x2="145" y2="252" stroke="#5C3317" stroke-width="7" stroke-linecap="round"/>
+  <line x1="161" y1="224" x2="165" y2="252" stroke="#5C3317" stroke-width="7" stroke-linecap="round"/>
+  <!-- Helmet -->
+  <ellipse cx="155" cy="160" rx="14" ry="10" fill="#7B1FA2" opacity="0.7"/>
+  <!-- Bindi -->
+  <circle cx="155" cy="165" r="1.5" fill="#FF0000"/>
+
+  <!-- Kid player (smaller) -->
+  <circle cx="290" cy="178" r="11" fill="#8B4513"/>
+  <!-- Kid with cap -->
+  <ellipse cx="290" cy="172" rx="11" ry="7" fill="#1565C0"/>
+  <rect x="280" y="189" width="20" height="35" rx="4" fill="#1565C0"/>
+  <!-- Bowling action arms -->
+  <line x1="280" y1="196" x2="262" y2="180" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
+  <line x1="300" y1="196" x2="315" y2="178" stroke="#8B4513" stroke-width="6" stroke-linecap="round"/>
+  <!-- Legs in running position -->
+  <line x1="284" y1="224" x2="275" y2="250" stroke="#5C3317" stroke-width="6" stroke-linecap="round"/>
+  <line x1="295" y1="224" x2="308" y2="248" stroke="#5C3317" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Fielder (woman) in background -->
+  <circle cx="80" cy="195" r="10" fill="#C4956A"/>
+  <path d="M70,205 Q65,225 70,245 L90,245 Q95,225 90,205 Z" fill="#4CAF50"/>
+  <!-- Saree drape suggestion -->
+  <line x1="70" y1="205" x2="60" y2="215" stroke="#A5D6A7" stroke-width="8" stroke-linecap="round"/>
+  <line x1="90" y1="205" x2="100" y2="220" stroke="#C4956A" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="80" cy="192" r="2" fill="red"/>
+
+  <!-- Score banner -->
+  <rect x="100" y="20" width="200" height="50" rx="8" fill="white" opacity="0.85"/>
+  <text x="200" y="45" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="bold" fill="#7B1FA2">🏏 CRICKET</text>
+  <text x="200" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5C4033" letter-spacing="1">FOR LADIES &amp; KIDS</text>
+
+  <!-- Ground boundary line -->
+  <ellipse cx="200" cy="205" rx="185" ry="68" fill="none" stroke="white" stroke-width="2" stroke-dasharray="8,6" opacity="0.6"/>
+
+  <!-- India flag color strip at top -->
+  <rect x="0" y="0" width="400" height="6" fill="#FF6B2B"/>
+  <rect x="0" y="6" width="400" height="6" fill="white"/>
+  <rect x="0" y="12" width="400" height="6" fill="#138808"/>
+</svg>
