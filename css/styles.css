@@ -233,13 +233,12 @@ p  { margin-bottom: 1rem; }
   justify-content: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    160deg,
-    #070F1A 0%,
-    #0D1B2A 35%,
-    #1A3A5C 65%,
-    #1565C0 100%
-  );
+  background-image:
+    linear-gradient(160deg, rgba(7,15,26,.82) 0%, rgba(13,27,42,.75) 40%, rgba(21,58,92,.65) 70%, rgba(21,101,192,.55) 100%),
+    url('../images/pioneer_park_map.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   padding: calc(var(--nav-h) + 40px) 24px 80px;
 }
 .hero-decor {
