@@ -1041,28 +1041,32 @@ p  { margin-bottom: 1rem; }
 /* ══════════════════════════════════════════════════════
    SCROLL ANIMATIONS
    ══════════════════════════════════════════════════════ */
-.fade-in, .slide-in-left, .slide-in-right {
+/* Hidden state is only applied once JS adds .anim-ready to <body>.
+   Without JS (or on failure) every element stays fully visible. */
+.anim-ready .fade-in,
+.anim-ready .slide-in-left,
+.anim-ready .slide-in-right {
   opacity: 0;
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.fade-in      { transform: translateY(24px); }
-.slide-in-left  { transform: translateX(-32px); }
-.slide-in-right { transform: translateX(32px); }
-.fade-in.visible,
-.slide-in-left.visible,
-.slide-in-right.visible {
-  opacity: 1;
-  transform: none;
-}
-.event-card {
+.anim-ready .fade-in       { transform: translateY(24px); }
+.anim-ready .slide-in-left  { transform: translateX(-32px); }
+.anim-ready .slide-in-right { transform: translateX(32px); }
+
+.anim-ready .event-card,
+.anim-ready .album-btn,
+.anim-ready .join-feature {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity .5s ease, transform .5s ease,
-              box-shadow .3s ease;
 }
-.event-card.visible {
-  opacity: 1;
-  transform: translateY(0);
+.anim-ready .event-card { transition: opacity .5s ease, transform .5s ease, box-shadow .3s ease; }
+.anim-ready .album-btn  { transition: opacity .5s ease, transform .5s ease; }
+.anim-ready .join-feature { transition: opacity .5s ease, transform .5s ease; }
+
+/* .visible restores visibility regardless of the guard class */
+.visible {
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 /* ══════════════════════════════════════════════════════

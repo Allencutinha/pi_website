@@ -34,6 +34,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ── Scroll animations ───────────────────────────────────
+// Gate hidden state behind body.anim-ready so content is always
+// visible if JS fails or the observer never fires (GitHub Pages etc.)
+document.body.classList.add('anim-ready');
+
+const ANIM_SELECTOR = '.fade-in, .slide-in-left, .slide-in-right, .event-card, .album-btn, .join-feature';
+
 const obs = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
@@ -42,21 +48,22 @@ const obs = new IntersectionObserver((entries) => {
     setTimeout(() => entry.target.classList.add('visible'), delay);
     obs.unobserve(entry.target);
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 
-document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .event-card, .album-btn, .join-feature')
-  .forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = el.classList.contains('slide-in-left')  ? 'translateX(-32px)'
-                       : el.classList.contains('slide-in-right') ? 'translateX(32px)'
-                       : 'translateY(20px)';
-    el.style.transition = 'opacity .55s ease, transform .55s ease';
-    obs.observe(el);
+document.querySelectorAll(ANIM_SELECTOR).forEach(el => obs.observe(el));
+
+// Reveal anything already visible in the initial viewport (no scroll needed)
+function revealInView() {
+  document.querySelectorAll(ANIM_SELECTOR).forEach(el => {
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) {
+      el.classList.add('visible');
+    }
   });
-
-const visibleStyle = document.createElement('style');
-visibleStyle.textContent = `.visible { opacity: 1 !important; transform: none !important; }`;
-document.head.appendChild(visibleStyle);
+}
+revealInView();
+// Run again after fonts/images finish layout shifts
+window.addEventListener('load', revealInView);
 
 // ── Active nav highlight ────────────────────────────────
 const sectionObs = new IntersectionObserver(entries => {
